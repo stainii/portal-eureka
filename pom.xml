@@ -10,6 +10,32 @@
 
     <name>portal-eureka</name>
     <description>Spring cloud Eureka server, used for service discovery.</description>
+    <url>http://portal.stijnhooft.be/monitoring</url>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Stijn Hooft</name>
+            <organizationUrl>http://www.stijnhooft.be/</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/stainii/portal-model.git</connection>
+        <developerConnection>scm:git:ssh://github.com:stainii/portal-model.git</developerConnection>
+        <url>http://github.com/stainii/portal-model/tree/master</url>
+    </scm>
+    <issueManagement>
+        <system>Trello</system>
+        <url>https://trello.com/b/LlzGuRM3/portal</url>
+    </issueManagement>
+    <ciManagement>
+        <system>Jenkins</system>
+        <url>http://portal-ci.westeurope.cloudapp.azure.com/</url>
+    </ciManagement>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
