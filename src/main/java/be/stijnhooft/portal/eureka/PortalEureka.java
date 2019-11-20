@@ -11,4 +11,5 @@ public class PortalEureka {
 	public static void main(String[] args) {
 		SpringApplication.run(PortalEureka.class, args);
 	}
+
 }
