@@ -1,4 +1,7 @@
 pipeline {
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+  }
   agent {
     docker {
       image 'stainii/portal-web-app-base'
@@ -23,18 +26,18 @@ pipeline {
                 disableDeferredWipeout: true,
                 notFailBuild: true)
       }
-              changed {
-                  script {
-                      emailext subject: '$DEFAULT_SUBJECT',
-                          body: '$DEFAULT_CONTENT',
-                          recipientProviders: [
-                              [$class: 'CulpritsRecipientProvider'],
-                              [$class: 'DevelopersRecipientProvider'],
-                              [$class: 'RequesterRecipientProvider']
-                          ],
-                          replyTo: '$DEFAULT_REPLYTO',
-                          to: '$DEFAULT_RECIPIENTS'
-                  }
-              }
+      changed {
+          script {
+              emailext subject: '$DEFAULT_SUBJECT',
+                  body: '$DEFAULT_CONTENT',
+                  recipientProviders: [
+                      [$class: 'CulpritsRecipientProvider'],
+                      [$class: 'DevelopersRecipientProvider'],
+                      [$class: 'RequesterRecipientProvider']
+                  ],
+                  replyTo: '$DEFAULT_REPLYTO',
+                  to: '$DEFAULT_RECIPIENTS'
           }
+      }
+  }
 }
